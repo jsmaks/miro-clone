@@ -2,9 +2,15 @@
 
 import { Plus } from 'lucide-react';
 import { CreateOrganization } from '@clerk/nextjs';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog';
 
-const NewButton = () => {
+export const NewButton = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -14,11 +20,13 @@ const NewButton = () => {
           </button>
         </div>
       </DialogTrigger>
-      <DialogContent>
-        <CreateOrganization />
+      <DialogContent className="bg-white p-0 justify-center">
+        <DialogTitle className="hidden">Create New Organization</DialogTitle>
+        <DialogDescription className="hidden">
+          Provide details to create a new organization.
+        </DialogDescription>
+        <CreateOrganization routing="hash"  />
       </DialogContent>
     </Dialog>
   );
 };
-
-export default NewButton;

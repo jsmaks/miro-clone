@@ -1,4 +1,5 @@
-import NewButton from "./new-button";
+import { NewButton } from "./new-button";
+
 
 const Sidebar = () => {
   return (
